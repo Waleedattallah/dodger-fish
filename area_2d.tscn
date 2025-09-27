@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b227yobtokuui"]
+
+[ext_resource type="Script" uid="uid://br7ffo4hosji" path="res://area_2d.gd" id="1_5rgpn"]
+[ext_resource type="Texture2D" uid="uid://d2f6kff626gsy" path="res://fish_brown.svg" id="1_gf172"]
+[ext_resource type="Script" uid="uid://t7x1glphr3fe" path="res://character_body_2d.gd" id="2_c0nl8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dl81w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rgpn"]
+size = Vector2(59, 47)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5rgpn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_c0nl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(43, 38)
+scale = Vector2(1.1874987, 1.1186521)
+texture = ExtResource("1_gf172")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-282, -88)
+shape = SubResource("CircleShape2D_dl81w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(44.5, 36.5)
+shape = SubResource("RectangleShape2D_5rgpn")
